@@ -97,11 +97,11 @@ Proper versioning is critical for production readiness and team collaboration.
 FastAPI automatically generates an interactive backend interface.
 
 **Local Testing:**
-Once the local server is running, navigate to:
+Once the local server is running, navigate to:  
 `http://127.0.0.1:8000/docs`
 
 **Live Testing:**
-You can also test the deployed system at:
-`https://<your-render-app-url>.onrender.com/docs`
+You can also test the deployed system at:  
+`https://python-based-finance-backend-system.onrender.com/docs`
 
 From the Swagger UI, you can test all endpoints, verify input validation by providing invalid data, and evaluate how the system returns meaningful summaries.
