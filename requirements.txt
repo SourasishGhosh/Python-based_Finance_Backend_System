@@ -10,6 +10,9 @@ SQLAlchemy==2.0.27
 # Data validation and parsing
 pydantic==2.6.3
 
+psycopg2-binary==2.9.9  # The PostgreSQL adapter for Python
+python-dotenv==1.0.1    # For loading environment variables
+
 # Optional: Needed if you decide to implement actual JWT token authentication later
 # python-jose[cryptography]==3.3.0
 # passlib[bcrypt]==1.7.4

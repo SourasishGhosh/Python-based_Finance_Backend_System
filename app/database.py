@@ -1,16 +1,19 @@
-from sqlalchemy import create_engine       #type:ignore
+import os
+from sqlalchemy import create_engine    #type:ignore
 from sqlalchemy.orm import sessionmaker #type:ignore
+from dotenv import load_dotenv
 from .models import Base
 
-# Using SQLite as suggested , but this URL can easily be swapped for PostgreSQL (e.g., "postgresql://user:pass@localhost/dbname").
-SQLALCHEMY_DATABASE_URL = "sqlite:///./finance_system.db"
+load_dotenv()
 
+# Retrieve the database URL from the environment..
+SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
+if not SQLALCHEMY_DATABASE_URL:
+    raise ValueError("DATABASE_URL environment variable is not set")
 
+# IMPORTANT: Remove the connect_args={"check_same_thread": False} parameter.
 
-# connect_args={"check_same_thread": False} is needed only for SQLite in FastAPI
-engine = create_engine(
-    SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
-)
+engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
