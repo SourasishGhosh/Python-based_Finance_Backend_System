@@ -5,10 +5,6 @@ This project is a Python-powered backend for a finance tracking system, designed
 
 It provides REST API endpoints for financial records management, analytics, and role-based access control, ensuring robust data handling and proper validation.
 
-## Live Deployment & API Documentation
-The backend is successfully deployed and accessible online. You can interact with and test all endpoints directly via the auto-generated Swagger API documentation:
-
-**Live API Interface:** `https://<your-render-app-url>.onrender.com/docs`
 
 **Deployment Assumptions & Architecture:**
 As permitted by the project guidelines, the following reasonable assumptions and architectural decisions were made for the live deployment:
@@ -33,19 +29,17 @@ The project is logically organized to enforce a strict separation of concerns, e
 ```text
 finance_backend/
 ├── app/
-│   ├── main.py          # FastAPI application instance and router registration
-│   ├── database.py      # SQLAlchemy engine and DB session management
+│   ├── main.py          
+│   ├── database.py       DB session management
 │   ├── models.py        # Database schema definitions (SQLAlchemy)
-│   ├── schemas.py       # Data validation and response models (Pydantic)
-│   ├── crud.py          # Core business logic and database queries
+│   ├── schemas.py       # Data validation  (Pydantic)
+│   ├── crud.py          
 │   ├── dependencies.py  # Auth, role-checking, and DB session injection
 │   └── routers/
-│       ├── records.py   # API endpoints for financial records
-│       ├── summary.py   # API endpoints for analytics
-│       └── users.py     # API endpoints for user management
-├── requirements.txt     # Dependency handling
-├── .env                 # Environment variables (not tracked in version control)
-└── README.md            # Project documentation
+│       ├── records.py   
+│       ├── summary.py   
+│       └── users.py     
+├── requirements.txt     
 ```
 
 ## Future Maintenance and Scalability
